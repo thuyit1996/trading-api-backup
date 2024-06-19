@@ -31,4 +31,4 @@ lerna-debug.log*
 .vscode/*
 .vercel
 
-.env.local
+# .env.local
