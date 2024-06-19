@@ -11,6 +11,7 @@ import fetch from 'node-fetch';
 import { TICKERS_MAPPINGS } from '../utils/constant';
 import { BuyHistory } from '../../schemas/buy-sell-history';
 import { History } from '../../schemas/history';
+import { VnIndex } from '../../schemas/vnindex';
 
 export const rounded = (value: number, decimals = 2) => {
   return Number(
@@ -26,6 +27,7 @@ export class TradingService {
     @InjectModel('Price') private readonly priceModel: Model<Price>,
     @InjectModel('Buy') private readonly buyModel: Model<Buy>,
     @InjectModel('History') private readonly historyModel: Model<History>,
+    @InjectModel('VnIndex') private readonly vnIndexModel: Model<VnIndex>,
     @InjectModel('BuyHistory')
     private readonly buyHistoryModel: Model<BuyHistory>,
   ) {}

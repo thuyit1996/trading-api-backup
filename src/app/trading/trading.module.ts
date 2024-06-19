@@ -4,6 +4,7 @@ import { TradingService } from './trading.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PriceSchema } from '../../schemas/price';
 import { BuySchema } from '../../schemas/buy';
+import { VnIndexSchema } from '../../schemas/vnindex';
 import { HistorySchema } from '../../schemas/history';
 import { BuyHistorySchema } from '../../schemas/buy-sell-history';
 
@@ -15,6 +16,9 @@ import { BuyHistorySchema } from '../../schemas/buy-sell-history';
     MongooseModule.forFeature([
       { name: 'BuyHistory', schema: BuyHistorySchema },
     ]),
+    MongooseModule.forFeature([
+        { name: 'VnIndex', schema: VnIndexSchema },
+      ]),
   ],
   controllers: [TradingController],
   providers: [TradingService],
