@@ -289,7 +289,11 @@ export class TradingController {
             const today = new Date().getDate();
             const apiData = await resp.json();
             const firstDayOfData = apiData?.data?.[0];
-            console.log(apiData);
+            console.log(firstDayOfData, {
+                today,
+                a: today === new Date(firstDayOfData * 1000).getDate(),
+                firstDayOfData
+            });
             if (firstDayOfData) {
                 if (today === new Date(firstDayOfData.date * 1000).getDate()) {
                     const data = new this.vnIndexModel({
