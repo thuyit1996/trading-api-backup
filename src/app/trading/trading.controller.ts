@@ -302,7 +302,11 @@ export class TradingController {
                 }
             }
             return {
-                responseData: null
+                responseData: {
+                    today,
+                    a: today === new Date(firstDayOfData * 1000).getDate(),
+                    firstDayOfData
+                }
             }
 
         } catch (error) {
