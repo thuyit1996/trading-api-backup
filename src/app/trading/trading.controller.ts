@@ -288,10 +288,10 @@ export class TradingController {
             const resp = await fetch('https://api.simplize.vn/api/historical/quote/prices/VNINDEX?type=index&page=0&size=30');
             const today = new Date().getDate();
             const apiData = await resp.json();
-            const firstDayOfData = apiData?.data?.[0]?.date;
+            const firstDayOfData = apiData?.data?.[0];
             console.log(apiData);
             if (firstDayOfData) {
-                if (today === new Date(firstDayOfData * 1000).getDate()) {
+                if (today === new Date(firstDayOfData.date * 1000).getDate()) {
                     const data = new this.vnIndexModel({
                         closeIndex: firstDayOfData.priceClose,
                         date: new Date().toISOString()
