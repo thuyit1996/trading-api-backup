@@ -319,9 +319,7 @@ export class TradingController {
         try {
             const percentResp = await this.vnIndexModel.find();
             return {
-                responseData: {
-                    responseData: percentResp || [],
-                }
+                responseData: percentResp || [],
             };
         } catch (error) {
             throw new InternalServerErrorException(error);
