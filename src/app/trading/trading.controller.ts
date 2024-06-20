@@ -313,4 +313,18 @@ export class TradingController {
             throw new InternalServerErrorException(error);
         }
     }
+
+    @Get('/vnindexes')
+    async getVnIndexes() {
+        try {
+            const percentResp = await this.vnIndexModel.find();
+            return {
+                responseData: {
+                    responseData: percentResp || [],
+                }
+            };
+        } catch (error) {
+            throw new InternalServerErrorException(error);
+        }
+    }
 }
