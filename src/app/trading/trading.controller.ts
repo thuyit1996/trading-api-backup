@@ -293,7 +293,7 @@ export class TradingController {
                 if (today === new Date(firstDayOfData.date * 1000).getDate()) {
                     const data = new this.vnIndexModel({
                         closeIndex: firstDayOfData.priceClose,
-                        date: new Date().toISOString()
+                        date: new Date()
                     }).save();
                     console.log(firstDayOfData);
                     return {
